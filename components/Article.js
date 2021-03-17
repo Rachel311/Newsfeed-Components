@@ -124,10 +124,24 @@ function articleMaker({  title, date, firstParagraph, secondParagraph, thirdPara
 
 }
 
-let newArticles = document.querySelector(.articles)
-data.forEach((data) => {
-  articles.appendChild(articleMaker(data))
+const articles = document.querySelector('.articles')
+
+data.forEach(data => {
+  articles.appendChild(articleMaker(data));
 })
+
+const newArticle1 ={
+  title:'I am really enjoying components!',
+  date:'03/16/2021'
+  firstParagraph:'I am glad I have help though',
+  secondParagraph:'Cause you know I need it!',
+  thirdParagraph: 'Love, Rach',
+}
+
+const articleContent = articleMaker(newArticle1);
+articles.appendChild(articleContent);
+
+
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
   Your component is a function that takes an article object as its only argument,
